@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { MessageModule } from 'primeng/message';
 import { ListboxModule } from 'primeng/listbox';
 import { CardModule } from 'primeng/card';
+import { RouterLink } from '@angular/router';
 
 interface ApiResponse {
   message: string;
@@ -13,7 +14,7 @@ interface ApiResponse {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MessageModule, ListboxModule, CardModule],
+  imports: [CommonModule, MessageModule, ListboxModule, CardModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

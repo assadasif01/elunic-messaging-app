@@ -1,0 +1,57 @@
+# elunic Developer Challenge
+
+## Development Environment
+
+You can start a development environment by running the following command in the root directory:
+```bash
+./shell
+```
+
+The environment will be preconfigured with a MySQL database at port 3306 and phpMyAdmin at port 13079.
+
+## Implementation Details
+
+This project implements the following database functionality:
+
+- Connected the backend to the MySQL database provided by Docker development environment
+- Created a database model for "user messages"
+- Created an API endpoint that accepts and stores messages from a form in the frontend
+- Implemented pagination in the frontend using PrimeNG components (3 messages per page)
+- Added 10 test messages to validate pagination functionality
+
+## Running the Application
+
+1. Start the development environment:
+   ```bash
+   SIO_EXTERNAL_PORT=8080 ./shell
+   ```
+
+2. Start both the backend and frontend services:
+   ```bash
+   npm run start:all
+   ```
+
+3. Create test messages (if needed):
+   ```bash
+   npm run create-test-messages
+   ```
+
+4. Access the application at:
+   - Frontend: http://localhost:4200
+   - API: http://localhost:3000/api
+   - PhpMyAdmin: http://localhost:13079 (username: root, password: root)
+
+## Key Features
+
+- **Database Migrations**: Explicit database migrations using TypeORM
+- **Validation**: Server-side validation using class-validator
+- **Pagination**: Client-side pagination using PrimeNG components
+- **API Endpoints**:
+  - GET /api/messages - Returns paginated messages
+  - POST /api/messages - Creates a new message
+
+## Technology Stack
+
+- Backend: NestJS with TypeORM
+- Frontend: Angular with PrimeNG
+- Database: MySQL
